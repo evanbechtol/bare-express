@@ -9,6 +9,14 @@ A basic scaffold/skeleton to create a Node.JS Express server.
 * Configurable application variables
 * REST-ful API setup
 
+### Future Functionality
+All future functioanlity will branch off of master; the master branch will always be
+a simple "scaffold" express server. The other branches will contain additional functionality.
+
+* MongoDB support: Connect and interact with Mongo DB's through [Mongoose](http://mongoosejs.com/)
+* SQL DB support: Connect and interact with SQL DB's through [Sequelize](http://docs.sequelizejs.com/)
+* Passport: Implement authentication and authorization strategies with [Passport](http://passportjs.org/) 
+
 ### Setup
 Simply clone the repo
 ```git clone https://github.com/Parasin/bare-express.git```
