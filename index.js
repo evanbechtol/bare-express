@@ -25,7 +25,7 @@ let app             = express(),
     } );
 
 // Setup views and pathing
-app.set( 'view engine', 'html' );
+app.set( 'view engine', config.viewEngine );
 app.set( 'views', path.join( __dirname, 'public' ) );
 
 // Serve static content
