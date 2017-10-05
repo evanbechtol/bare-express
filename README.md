@@ -1,6 +1,10 @@
 # Bare Express Web Server
 A basic scaffold/skeleton to create a Node.JS Express server.
 
+### Contributing
+If you wish to contribute to this repository, please feel free to clone/fork.
+Issue Pull Requests or open issues for any changes that you make.
+
 ### Functionality
 * HTTP(S) Request Logging
 * Rotating log system
@@ -10,7 +14,7 @@ A basic scaffold/skeleton to create a Node.JS Express server.
 * REST-ful API setup
 
 ### Future Functionality
-All future functioanlity will branch off of master; the master branch will always be
+All future functionality will branch off of master; the master branch will always be
 a simple "scaffold" express server. The other branches will contain additional functionality.
 
 * MongoDB support: Connect and interact with Mongo DB's through [Mongoose](http://mongoosejs.com/)
