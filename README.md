@@ -12,7 +12,7 @@ Issue Pull Requests or open issues for any changes that you make.
 * Compression of responses
 * Configurable application variables
 * REST-ful API setup
-* MongoDB support: 
+* MongoDB support 
      * Branch: [mongoose](https://github.com/Parasin/bare-express/tree/mongoose) 
      * Connect and interact with Mongo DB's through [Mongoose](http://mongoosejs.com/)
 
