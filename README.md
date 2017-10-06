@@ -27,7 +27,9 @@ a simple "scaffold" express server. The other branches will contain additional f
 - Simply clone the repo
 ```git clone https://github.com/Parasin/bare-express.git```
 
-- Install the dependencies ```npm install```
+- Install the dependencies 
+   - Install [Node.JS](https://nodejs.org/en/)
+   - Install application dependencies ```npm install```
 
 - Add the routes you need under the `routes` directory, and include require them in your `routes/index.js` file.
 ```
