@@ -45,6 +45,5 @@ routes( app );
 
 // Start application
 app.listen( config.port, () => {
-  console.log( 'Now listening on', config.port );
-
+  console.log( 'Express running, now listening on port', config.port );
 } );
