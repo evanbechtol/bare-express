@@ -12,12 +12,14 @@ Issue Pull Requests or open issues for any changes that you make.
 * Compression of responses
 * Configurable application variables
 * REST-ful API setup
+* MongoDB support: 
+     * Branch: [mongoose](https://github.com/Parasin/bare-express/tree/mongoose) 
+     * Connect and interact with Mongo DB's through [Mongoose](http://mongoosejs.com/)
 
 ### Future Functionality
 All future functionality will branch off of master; the master branch will always be
 a simple "scaffold" express server. The other branches will contain additional functionality.
 
-* MongoDB support: Connect and interact with Mongo DB's through [Mongoose](http://mongoosejs.com/)
 * SQL DB support: Connect and interact with SQL DB's through [Sequelize](http://docs.sequelizejs.com/)
 * Passport: Implement authentication and authorization strategies with [Passport](http://passportjs.org/) 
 
