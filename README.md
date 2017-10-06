@@ -22,12 +22,12 @@ a simple "scaffold" express server. The other branches will contain additional f
 * Passport: Implement authentication and authorization strategies with [Passport](http://passportjs.org/) 
 
 ### Setup
-Simply clone the repo
+- Simply clone the repo
 ```git clone https://github.com/Parasin/bare-express.git```
 
-Install the dependencies ```npm install```
+- Install the dependencies ```npm install```
 
-Add the routes you need under the `routes` directory, and include require them in your `routes/index.js` file.
+- Add the routes you need under the `routes` directory, and include require them in your `routes/index.js` file.
 ```
 | routes/
 | index.js
