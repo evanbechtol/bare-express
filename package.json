@@ -1,29 +1,39 @@
 {
   "name": "bare-express-server",
-  "version": "1.0.0",
+  "author": "Evan Bechtol <evanbechtol@gmail.com>",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "set NODE_ENV=development && node index.js",
-    "start": "set NODE_ENV=production && node index.js"
+    "lint": "eslint -c .eslintrc.json ./* --ext .js",
+    "test": "mocha test/* --reporter spec",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Parasin/bare-express.git"
+    "url": "git+https://scmgr.eams.ericsson.net/incubation/smoke-signal-service.git"
   },
-  "author": "Evan Bechtol",
-  "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/Parasin/bare-express/issues"
+    "url": "https://scmgr.eams.ericsson.net/incubation/smoke-signal-service/issues"
   },
-  "homepage": "https://github.com/Parasin/bare-express#readme",
+  "homepage": "https://scmgr.eams.ericsson.net/incubation/smoke-signal-service#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "compression": "^1.7.1",
     "express": "^4.16.1",
+    "mongoose": "^5.4.14",
     "morgan": "^1.9.0",
-    "nodemon": "^1.18.10",
     "rotating-file-stream": "^1.3.2",
     "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.15.3",
+    "eslint-plugin-node": "^8.0.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.0.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
