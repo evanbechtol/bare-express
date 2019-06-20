@@ -1,9 +1,9 @@
-FROM scmgr.eams.ericsson.net:5005/docker/node-base:10
+FROM node:10.15.2
 MAINTAINER Evan Bechtol "evan.bechtol@ericsson.com"
 
 # Update the below proxy and timezone arguments using "--build-arg" inputs during "docker build"
-ARG http_proxy=http://10.125.198.138:8080
-ARG https_proxy=http://10.125.198.138:8080
+ARG http_proxy=''
+ARG https_proxy=''
 ARG TZ=America/Chicago
 
 # Set the proxy and timezone environment variables using "-e" inputs during "docker run"
@@ -18,4 +18,4 @@ COPY . /usr/src/app
 RUN npm install --production
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start" ]
