@@ -30,10 +30,28 @@ class ExpressLoader {
     routes( app );
 
 
-    // Start application
-    this.server = app.listen( config.port, () => {
-      logger.info( `Express running, now listening on port ${config.port}` );
-    } );
+    if ( config.env.toLowerCase() !== "production" ) {
+      // Start application
+      this.server = app.listen( config.port, () => {
+        logger.info( `Express running, now listening on port ${config.port}` );
+
+        // eslint-disable-next-line
+        console.info( `Express running, now listening on port ${config.port}` );
+      } );
+    } else {
+      const https = require( "https" );
+      const expressOptions = {
+        key: fs.readFileSync( config.key ),
+        cert: fs.readFileSync( config.cert )
+      };
+
+      this.server = https.createServer( expressOptions, app ).listen( config.port, () => {
+        logger.info( `HTTPS Server running, now listening on port ${config.port}` );
+
+        // eslint-disable-next-line
+        console.info( `HTTPS Server running, now listening on port ${config.port}` );
+      } );
+    }
   }
 
   get Server () {
