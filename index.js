@@ -3,9 +3,8 @@ const mongoose = require( "mongoose" );
 const logger = require( "./services/Logger" );
 
 const mongooseOptions = {
-  useCreateIndex: true,
-  useNewUrlParser: true,
-  autoReconnect: true
+  useUnifiedTopology: true,
+  useNewUrlParser: true
 };
 
 mongoose.Promise = global.Promise;
