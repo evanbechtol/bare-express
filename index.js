@@ -17,6 +17,9 @@ mongoose.connect( config.dbUrl, mongooseOptions )
     // Create express instance to setup API
     const ExpressLoader = require( "./loaders/Express" );
     new ExpressLoader();
+
+    require( "./loaders/Passport" );
+
   } )
   .catch( err => {
     //eslint-disable-next-line
