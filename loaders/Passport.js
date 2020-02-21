@@ -15,29 +15,41 @@ const options = {
   callbackURL: "/auth/google/redirect"
 };
 
+passport.serializeUser( ( user, done ) => {
+  done( null, user._id );
+} );
+
+passport.deserializeUser( ( id, done ) => {
+  User.findById( id )
+    .then( user => {
+      done( null, user );
+    } )
+    .catch( err => console.error( err ) );
+} );
+
 passport.use( new GoogleStrategy( options,
   ( token, tokenSecret, profile, done ) => {
     const findQuery = { googleId: profile.id };
 
+    // Check to see if user exists in DB
     User.findOne( findQuery )
       .then( currentUser => {
         if ( currentUser ) {
-
+          done( null, currentUser );
         } else {
-          const userData = { username: profile.displayName, googleId: profile.id };
+          const userData = {
+            username: profile.displayName,
+            googleId: profile.id
+          };
           const user = new UserModel( userData );
 
           User.create( user )
             .then( newUser => {
               console.log( `New user created: ${newUser}` );
+              done( null, newUser );
             } )
-            .catch( err => {
-              console.error( err );
-            } );
+            .catch( err => console.error( err ) );
         }
       } )
       .catch( err => console.error( err ) );
-
-
   } ) );
-

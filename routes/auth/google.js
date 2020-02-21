@@ -7,7 +7,7 @@ router.get( "/", passport.authenticate( "google", {
 } ) );
 
 router.get( "/redirect", passport.authenticate( "google" ), ( req, res ) => {
-  res.send( { message: "You are authenticated!" } );
+  res.send( req.user );
 } );
 
 module.exports = router;
