@@ -6,10 +6,21 @@ const routes = require( "../routes" );
 const compression = require( "compression" );
 const logger = require( "../services/Logger" );
 const config = require( "../config" );
+const cookieSession = require( "cookie-session" );
+const passport = require( "passport" );
 
 class ExpressLoader {
   constructor () {
     const app = express();
+
+    app.use( cookieSession( {
+      maxAge: 24 * 60 * 60 * 1000,
+      keys: [ config.session.cookieKey ]
+    } ) );
+
+    // Initialize passport
+    app.use( passport.initialize() );
+    app.use( passport.session() );
 
     // Setup error handling, this must be after all other middleware
     app.use( ExpressLoader.errorHandler );
