@@ -5,7 +5,11 @@ let config = {
   logDir: process.env.LOGDIR || "logs",
   viewEngine: process.env.VIEW_ENGINE || "html",
   googleConsumerKey: process.env.GOOGLE_CONSUMER_KEY,
-  googleConsumerSecret: process.env.GOOGLE_CONSUMER_SECRET
+  googleConsumerSecret: process.env.GOOGLE_CONSUMER_SECRET,
+
+  session: {
+    cookieKey: "y_nb89!R43qvB598t&134n43g12%"
+  }
 };
 
 module.exports = config;
