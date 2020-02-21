@@ -7,7 +7,7 @@ router.get( "/", passport.authenticate( "google", {
 } ) );
 
 router.get( "/redirect", passport.authenticate( "google" ), ( req, res ) => {
-  res.redirect( "http://localhost:8080/about" );
+  res.redirect( "http://localhost:8080/profile" );
 } );
 
 module.exports = router;
