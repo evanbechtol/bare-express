@@ -1,5 +1,5 @@
 /* eslint-disable */
-const assert = require( "chai" ).assert;
+const { assert } = require( "chai" );
 const mocha = require( "mocha" );
 const ObjectService = require( "../../services/ObjectService" );
 const CordsKeyWhitelist = require( "../../config/testWhitelists" );

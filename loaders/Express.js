@@ -14,7 +14,7 @@ class ExpressLoader {
     const app = express();
 
     app.use( cookieSession( {
-      domain: "localhost",
+      name: "express",
       httpOnly: false,
       maxAge: 24 * 60 * 60 * 1000,
       keys: [ config.session.cookieKey ]
