@@ -13,6 +13,10 @@ const userSchema = mongoose.Schema( {
 
   facebookId: {
     type: String
+  },
+
+  githubId: {
+    type: String
   }
 } );
 
