@@ -6,6 +6,8 @@ let config = {
   viewEngine: process.env.VIEW_ENGINE || "html",
   googleConsumerKey: process.env.GOOGLE_CONSUMER_KEY,
   googleConsumerSecret: process.env.GOOGLE_CONSUMER_SECRET,
+  facebookAppId: process.env.FACEBOOK_APP_ID,
+  facebookAppSecret: process.env.FACEBOOK_APP_SECRET,
 
   session: {
     cookieKey: "y_nb89!R43qvB598t&134n43g12%"
