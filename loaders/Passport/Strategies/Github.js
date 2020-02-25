@@ -6,7 +6,7 @@ const MongooseService = require( "../../../services/MongooseService" );
 const User = new MongooseService( UserModel );
 const githubOptions = {
   clientID: githubClientId,
-  clientSecret: githubClientId,
+  clientSecret: githubClientSecret,
   callbackURL: "/auth/github/redirect"
 };
 
