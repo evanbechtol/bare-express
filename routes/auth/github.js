@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require( "passport" );
 
 router.get( "/", passport.authenticate( "github", {
-  scope: [ "email" ]
+  scope: [ "read:user", "user:email" ]
 } ) );
 
 router.get( "/redirect", passport.authenticate( "github", {
