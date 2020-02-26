@@ -35,7 +35,9 @@ passport.use( new FacebookStrategy( facebookOptions,
         } else {
           const userData = {
             username: profile.displayName,
-            googleId: profile.id
+            facebookId: profile.id,
+            email: profile.emails[ 0 ].value,
+            avatar: profile.photos[ 0 ].value
           };
           const user = new UserModel( userData );
 
