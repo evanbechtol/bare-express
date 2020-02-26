@@ -23,11 +23,19 @@ passport.use( new GithubStrategy( githubOptions,
     User.findOne( findQuery )
       .then( currentUser => {
         if ( currentUser ) {
-          done( null, currentUser );
+          currentUser.avatar = profile.photos[ 0 ].value;
+
+          User.update( currentUser._id, currentUser )
+            .then( updatedUser => {
+              done( null, updatedUser );
+            } )
+            .catch( err => console.error( err ) );
+
         } else {
           const userData = {
             username: profile.displayName,
-            googleId: profile.id
+            googleId: profile.id,
+            avatar: profile.photos[ 0 ].value
           };
           const user = new UserModel( userData );
 
