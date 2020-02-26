@@ -12,23 +12,36 @@ const googleOptions = {
 
 passport.use( new GoogleStrategy( googleOptions,
   ( token, tokenSecret, profile, done ) => {
-    const findQuery = { googleId: profile.id };
+    const findQuery = {
+      $or: [
+        { googleId: profile.id },
+        { username: profile.displayName }
+      ]
+    };
 
     // Check to see if user exists in DB
     User.findOne( findQuery )
       .then( currentUser => {
         if ( currentUser ) {
-          done( null, currentUser );
+          currentUser.avatar = profile.photos[ 0 ].value;
+
+          User.update( currentUser._id, currentUser )
+            .then( updatedUser => {
+              done( null, updatedUser );
+            } )
+            .catch( err => console.error( err ) );
+
         } else {
           const userData = {
             username: profile.displayName,
-            googleId: profile.id
+            googleId: profile.id,
+            email: profile.emails[ 0 ].value,
+            avatar: profile.photos[ 0 ].value
           };
           const user = new UserModel( userData );
 
           User.create( user )
             .then( newUser => {
-              console.log( `New user created: ${newUser}` );
               done( null, newUser );
             } )
             .catch( err => console.error( err ) );
