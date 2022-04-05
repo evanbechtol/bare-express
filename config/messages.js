@@ -1,8 +1,8 @@
 module.exports = {
-  400: "",
-  403: "",
-  404: "",
-  500: "",
+  400: "Bad request",
+  403: "Unauthorized",
+  404: "Not found",
+  500: "Server Error",
   responses: {
     appTokenNotProvided: "appToken must be included in" +
       " querystring/params/body for request",

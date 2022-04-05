@@ -6,18 +6,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.json ./* --ext .js",
+    "lint:fix": "eslint -c .eslintrc.json ./* --ext .js --fix .",
     "test": "mocha test/* --reporter spec",
     "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://scmgr.eams.ericsson.net/incubation/smoke-signal-service.git"
-  },
-  "bugs": {
-    "url": "https://scmgr.eams.ericsson.net/incubation/smoke-signal-service/issues"
-  },
-  "homepage": "https://scmgr.eams.ericsson.net/incubation/smoke-signal-service#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "body-parser": "^1.19.0",
     "compression": "^1.7.1",
     "express": "^4.16.1",

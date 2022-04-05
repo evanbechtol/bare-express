@@ -1,4 +1,5 @@
 const template = require( "./routes-template" );
+const users = require( "./users" );
 
 const routes = app => {
   app.use( ( req, res, next ) => {
@@ -17,6 +18,7 @@ const routes = app => {
   } );
 
   app.use( "/", template );
+  app.use( "/users", users );
 };
 
 module.exports = routes;
