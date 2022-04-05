@@ -5,6 +5,7 @@ function getDbQueryStrings(queryString = {}) {
     let searchStr = queryString.searchstr || null;
     const sort = queryString.sort || null;
     const skip = Number(queryString.skip) || 0;
+    const page = Number(queryString.page) || 0;
     const limit = Number(queryString.limit) || 100;
 
     if (searchStr) {
@@ -20,7 +21,7 @@ function getDbQueryStrings(queryString = {}) {
         }
     }
 
-    return {query, searchStr, skip, limit, sort};
+    return {skip, limit, sort, page};
 }
 
 module.exports = {getDbQueryStrings};

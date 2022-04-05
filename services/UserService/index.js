@@ -1,14 +1,32 @@
 const axios = require("axios");
-const {sendError, sendSuccess} = require("../../middlewares/response");
-const apiUrl = "https://randomuser.me/api/";
+const apiUrl = (queryString) => `https://randomuser.me/api/?&${queryString ? queryString : ''}`;
 
-async function getUsers(params) {
+async function getUsers(query) {
     let response;
 
     try {
-        const {data} = await axios.get(apiUrl);
+        let paramsArray = Object.keys(query)
+            .map(key => [key, query[key]]);
+        const paramsStr = paramsArray.reduce((previousValue, currentValue, currentIndex) => {
+            let key = currentValue[0];
+            let value = currentValue[1];
+
+            switch (key) {
+                case 'limit':
+                    key = 'results';
+                    break;
+            }
+
+            previousValue += `${key}=${value}`;
+
+            if (currentIndex < paramsArray.length - 1) {
+                previousValue += "&";
+            }
+            return previousValue;
+        }, "");
+        const {data} = await axios.get(apiUrl(paramsStr));
         response = data.results;
-    } catch(err) {
+    } catch (err) {
         console.error(err);
         throw err;
     }
