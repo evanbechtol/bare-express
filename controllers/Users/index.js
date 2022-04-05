@@ -8,7 +8,7 @@ async function getUsers(req, res) {
     const queryStrings = queryUtil.getDbQueryStrings(req.query);
 
     try {
-        const data = await userService.getUsers(queryStrings);
+        const data = await userService.getUsers(req.query);
         return res.send(sendSuccess(data));
     } catch (err) {
         logger.error(err);

@@ -24,4 +24,24 @@ function getDbQueryStrings(queryString = {}) {
     return {skip, limit, sort, page};
 }
 
-module.exports = {getDbQueryStrings};
+function stringifyQuerystring(paramsArray) {
+    return paramsArray.reduce((previousValue, currentValue, currentIndex) => {
+        let key = currentValue[0];
+        let value = currentValue[1];
+
+        switch (key) {
+            case 'limit':
+                key = 'results';
+                break;
+        }
+
+        previousValue += `${key}=${value}`;
+
+        if (currentIndex < paramsArray.length - 1) {
+            previousValue += "&";
+        }
+
+        return previousValue;
+    }, "");
+}
+module.exports = {getDbQueryStrings, stringifyQuerystring};
