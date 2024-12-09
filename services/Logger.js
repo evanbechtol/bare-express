@@ -4,7 +4,7 @@ const logger = winston.createLogger( {
   level: "info",
   format: winston.format.json(),
   defaultMeta: {
-    service: "smoke-signal-service",
+    service: "node-express-service",
     time: new Date().toISOString()
   },
   transports: [
