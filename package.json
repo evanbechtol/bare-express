@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://scmgr.eams.ericsson.net/incubation/smoke-signal-service.git"
+    "url": "git+https://github.com/evanbechtol/bare-express.git"
   },
   "bugs": {
     "url": "https://github.com/evanbechtol/bare-express/issues"
