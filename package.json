@@ -14,9 +14,9 @@
     "url": "git+https://scmgr.eams.ericsson.net/incubation/smoke-signal-service.git"
   },
   "bugs": {
-    "url": "https://scmgr.eams.ericsson.net/incubation/smoke-signal-service/issues"
+    "url": "https://github.com/evanbechtol/bare-express/issues"
   },
-  "homepage": "https://scmgr.eams.ericsson.net/incubation/smoke-signal-service#readme",
+  "homepage": "https://github.com/evanbechtol/bare-express",
   "dependencies": {
     "body-parser": "^1.19.0",
     "compression": "^1.7.1",
